@@ -1,0 +1,78 @@
+<div class='freeze'>
+	<div class='freeze-inner'>
+		<h1>Image Manager</h1>
+		<div id='button-bar' class='row-fluid'>
+			<div class='span9'>
+				<button class='btn' id='parent-folder'>
+					<i class='icon-folder-close'></i>
+					Parent Folder
+				</button>
+				<button class='btn' id='create-folder'>
+					<i class='icon-plus-sign'></i>
+					Create Folder
+				</button>
+			</div>
+			<div class='span3 text-right'>
+				<button class='btn btn-success' id='upload'>
+					<i class='icon-plus-sign icon-white'></i>
+					Upload
+				</button>
+			</div>
+		</div>
+		<!--<hr style='margin: 10px;'>-->
+	</div>
+</div>
+
+<div style="margin: 125px 0px 0px 0px;">
+	<div id="app"></div>
+</div>
+<input type='hidden' id='config' value='<?php echo Zend_Json_Encoder::encode($this->config)?>'>
+
+<!-- App Templates -->
+<script type="text/x-handlebars" id="thumbnail-view">
+	<section id='photos'>
+		{{#each files}}
+		<div class='image' data-uid='{{uid}}'>
+		{{#if isDirectory}}
+			<!--<input class='image-check' type='checkbox' value='{{uid}}'>-->
+			<img src='/images/folder_300x300.png'>
+			<div class='info'>
+				<h4>{{filename}}</h4>
+				<div class='more-info'>
+					<div style='margin: 5px 5px 0px 5px;'>
+						<button type='button' class='btn btn-info open-folder' data-uid='{{uid}}'>
+							<i class='icon-folder-open icon-white'></i>
+							Browse
+						</button>
+						<button type='button' class='btn btn-inverse delete-image' data-uid='{{uid}}'>
+							<i class='icon-trash icon-white'></i>
+							Delete
+						</button>
+					</div>
+				</div>
+			</div>
+		{{else}}
+			<!--<input class='image-check' type='checkbox' value='{{uid}}'>-->
+			<img src='{{../../imageLocation}}{{fullPath}}'>
+			<div class='info'>
+				<h4>{{filename}}</h4>
+				<div class='more-info'>
+					<div style='margin: 5px 5px 0px 5px;'>
+						{{#if ../../insert}}
+						<button type='button' class='btn btn-success insert-image' data-uid='{{uid}}'>
+							<i class='icon-plus-sign icon-white'></i>
+							Insert
+						</button>
+						{{/if}}
+						<button type='button' class='btn btn-inverse delete-image' data-uid='{{uid}}'>
+							<i class='icon-trash icon-white'></i>
+							Delete
+						</button>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+		</div>
+		{{/each}}
+	</section>
+</script>

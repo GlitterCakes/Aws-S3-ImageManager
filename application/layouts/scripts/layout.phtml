@@ -1,0 +1,19 @@
+<?=$this->doctype() . "\n"?>
+<html lang="en">
+	<head>
+		<?=$this->headMeta() . "\n"?>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<?=$this->headTitle() . "\n"?>
+		<?$this->headLink()->appendStylesheet('/lib/bootstrap-2.3.2/css/bootstrap.min.css')?>
+		<?$this->headLink()->appendStylesheet('/site/main.css')?>
+		<?=$this->headLink() . "\n"?>
+	</head>
+	<body class='yui3-skin-sam'>
+		<?php echo $this->layout()->content; ?>
+		<script src='http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js'></script>
+		<script src='/lib/jquery-1.10.2.min.js'></script>
+		<script src='/lib/bootstrap-2.3.2/js/bootstrap.min.js'></script>
+		<script src='/site/main.js'></script>
+		<?=$this->headScript()?>
+	</body>
+</html>
