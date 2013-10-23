@@ -9,7 +9,7 @@ Instructions
 
 Requirements
 * PHP Pecl Imagick extension
-* PHP Pecl AWS SDK
+* PHP AWS SDK Phar
 
 Side notes
 * Works with TinyMCE when a valid file browser callback is configured.
