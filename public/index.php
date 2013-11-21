@@ -11,11 +11,11 @@ defined('APPLICATION_ENV')
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../library'),
-    get_include_path(),
+    get_include_path()
 )));
 
-// Include AWS SDK
-require_once 'AWSSDKforPHP/aws.phar';
+// Require composer
+require_once realpath(APPLICATION_PATH . '/../vendor/autoload.php');
 
 /** Zend_Application */
 require_once 'Zend/Application.php';
