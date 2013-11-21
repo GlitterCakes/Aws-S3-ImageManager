@@ -1,0 +1,6 @@
+{
+	"require": {
+		"zendframework/zendframework1": "1.*",
+		"aws/aws-sdk-php": "2.*"
+	}
+}
