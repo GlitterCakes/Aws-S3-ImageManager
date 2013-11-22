@@ -6,10 +6,11 @@ Image Manager for Amazon Web Services S3. Uses a responsive design image grid st
 Instructions
 * Open /application/configs/application.ini and set your AWS access key, secret key, and S3 bucket.
 * Make sure the /images "directory" in the chosen S3 bucket is available.
+* Install libraries using "composer install" from the root directory of the project.
 
 Requirements
 * PHP Pecl Imagick extension
-* PHP AWS SDK Phar
+* Composer
 
 Side notes
 * Works with TinyMCE when a valid file browser callback is configured.
